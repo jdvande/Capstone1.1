@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arti-rate - Register</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='NewUserRegister.css') }}">
+
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Logo.png') }}">
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</head> 
+<body>
+<div class="login-container">
+
+  <div class="login-form">
+    <h1>Register</h1>
+    <form id="register">
+      <div class="input-group">
+
+        <label for="new-username">Username:</label>
+        <input type="text" id="new-username" name="new-username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <div class="input-icon-container">
+          <input type="password" id="password" name="password" required>
+          <i class="fas fa-eye password-icon" onclick="togglePasswordVisibility('password', this)"></i>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <div class="input-icon-container">
+          <input type="password" id="confirm-password" name="confirm-password" required>
+          <i class="fas fa-eye password-icon" onclick="togglePasswordVisibility('confirm-password', this)"></i>
+        </div>
+        <div id="password-error" style="color: red; display: none; text-align: center;">Passwords do not match.</div>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Art Generator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='NewUserRegister.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Logo.png') }}">
+
+</head>
+<body> 
+<div class="header">
+    <!-- Header content -->
+</div>
+
+<div class="login-container"> <!-- Section or container for the login form with a class for styling -->
+  <div class="login-form"> <!-- Container for the form, styled as a login form -->
+    <h1>Arti-Rate</h1> <!-- Main heading/title of the login form -->
+    <form id="login"> <!-- The form element with an ID for identification and styling -->
+      <div class="input-group"> <!-- Grouping for input field, allows for collective styling and alignment -->
+        <label for="username">Username:</label> <!-- Label for the username input -->
+        <input type="text" id="username" name="username" required> <!-- Text input for username, marked as required -->
+      </div>
+      <div class="input-group"> <!-- Another input group for password -->
+        <label for="password">Password:</label> <!-- Label for the password input -->
+        <input type="password" id="password" name="password" required> <!-- Password input, hides text entry, also required -->
+      </div>
+      <button type="submit">Login</button>
+      <div class="input-group">
+
+
+
+
+
+        <a href="{{ url_for('register') }}" class="back-button">Create New User</a>
+      </div>
+
+
+      <div class="back-button-container">
+        <a href="{{ url_for('home') }}" class="back-button">Back to Main Page</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <div class="main-container"></div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+
+
+<!--<a href="button" id="createUser">Create New User</a> -->

@@ -1,0 +1,160 @@
+/* site.css */
+/* Basic Reset */
+body, h1, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Header Styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .title {
+    font-size: 24px;
+    color: black;
+  }
+
+  .navbar {
+    display: flex;
+    margin-left:auto;
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #007bff;
+  }
+
+  .Login {
+    background-color: #ff3b30;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .Login:hover {
+    background-color: #e63900;
+  }
+
+  /* Main Container Styles */
+  .main-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .image-display {
+    flex: 3;
+    background-color: #ccc;
+    margin-right: 20px;
+    height: 500px; /* Adjust as needed */
+  }
+
+  .parameters {
+    margin-bottom: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .parameter-controls label,
+  .parameter-controls input {
+    margin-bottom: 10px;
+  }
+
+  .button-container {
+    margin-top: center;
+    margin-bottom:20px;
+  }
+
+  .button-container button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .button-container button:nth-child(1) {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .button-container button:nth-child(2) {
+    background-color: #28a745;
+    color: white;
+  }
+
+/*ensures each parameter label same width*/
+.parameter-control label {
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+/*ensures each parameter slider has same width*/
+.parameter-control input {
+    width: 75%;
+}
+
+/*span display the slider value*/
+.slider-value {
+    display: inline-block;
+    width:30px;
+    text-align: right;
+    margin-left:10px;
+}
+
+/*top spacing for back button*/
+.back-button-container {
+    margin-top: auto;
+
+}
+
+.back-button {
+    background-color: #007bff;
+    color:white;
+    padding: 10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+    display:inline-block;
+}
+
+/*darkens color when hovered on*/
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+#parameterValuesDisplay {
+/* Adjusts space below the Generate button */
+  margin-top: 10px; 
+}
+
+.button-and-display-container {
+    text-align: center;
+    margin-top: 20px; /* Adjusts space above the container */
+}
+
+#parameterValuesDisplay {
+    margin-top: 10px; /* Adjusts space below the Generate button */
+}

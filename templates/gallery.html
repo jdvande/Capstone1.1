@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Art Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Logo.png') }}">
+</head>
+<body> 
+
+  <div class="back-button-container">
+    <a href="{{ url_for('home') }}" class="back-button">Back to Main Page</a>
+  </div>
+  <!-- Include the same header as in your main page -->
+  <div class="header">
+    <!-- Header content -->
+  </div>
+
+<!--SURPRISE -->
+<img src="static/BOO.jpg" alt="Big Bertha" width="70%">
+
+
+  <div class="main-container">
+    <h1>Gallery</h1>
+    <p>Here you'll find a collection of generated art.</p>
+    <!-- Other content -->
+  </div>
+</body>
+</html>

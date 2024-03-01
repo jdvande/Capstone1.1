@@ -3,7 +3,7 @@
 import PIL
 from PIL import ImageTk, Image, ImageDraw
 
-from TestInterface import TestInterface
+from GenerateImage import GenerateImage
 
 import pytest
 import os
@@ -11,7 +11,7 @@ import os
 
 class TestSuite:
     def test_generate(self):
-        generate_test = TestInterface()
+        generate_test = GenerateImage()
         total_tests = 0
         while total_tests < 100:
             generate_test.set_random()
@@ -19,7 +19,7 @@ class TestSuite:
             total_tests += 1
 
     def test_v_line_count(self):
-        v_line_test = TestInterface()
+        v_line_test = GenerateImage()
         total_tests = 0
         while total_tests < 100:
             v_line_test.set_random()
@@ -39,7 +39,7 @@ class TestSuite:
             total_tests += 1
 
     def test_h_line_count(self):
-        h_line_test = TestInterface()
+        h_line_test = GenerateImage()
         total_tests = 0
         while total_tests < 100:
             h_line_test.set_random()
@@ -59,7 +59,7 @@ class TestSuite:
             total_tests += 1
 
     def test_line_spacing(self):
-        ls_test = TestInterface()
+        ls_test = GenerateImage()
         total_tests = 0
         # Randomize Values
         while total_tests < 100:
@@ -93,7 +93,7 @@ class TestSuite:
             total_tests += 1
 
     def test_line_thickness(self):
-        lt_test = TestInterface()
+        lt_test = GenerateImage()
         total_tests = 0
         # Randomize Values
         while total_tests < 100:
@@ -141,7 +141,8 @@ class TestSuite:
             total_tests += 1
 
     def test_image_saved(self):
-        is_test = TestInterface()
+        is_test = GenerateImage()
+        is_test.set_random()
         is_test.generate_image()
 
         did_save = False

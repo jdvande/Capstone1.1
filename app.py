@@ -1,4 +1,8 @@
-from flask import Flask, render_template
+import io
+
+from flask import Flask, render_template, request, send_file
+from GenerateImage import GenerateImage
+from PIL import Image
 
 app = Flask(__name__)
 
@@ -26,6 +30,15 @@ def gallery():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+
+@app.route('/execute-generate', methods=['POST'])
+def execute_generate():
+    data = request.json
+    values = data['values']
+    create = GenerateImage(values)
+    create.generate_image()
+    return "Success"
 
 
 if __name__ == '__main__':

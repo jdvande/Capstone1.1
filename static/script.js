@@ -66,7 +66,6 @@ if (registerForm) {
   }
 });
 
-<script>
 function updateValue(slider) {
   var valueDisplay = document.getElementById(slider.id + '-value');
   valueDisplay.textContent = slider.value;
@@ -83,6 +82,8 @@ function updateParameterArray() {
 
   displayText += '<br>' + parametersArray.join(', ');
   document.getElementById('parameterValuesDisplay').textContent = displayText;
+
+  return parametersArray;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -95,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.getElementById('generateButton').addEventListener('click', function() {
-    updateParameterArray();
+    values = updateParameterArray();
+
+    fetch('/execute-generate', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({values: values})});
   });
 });
-</script>

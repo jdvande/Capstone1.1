@@ -12,7 +12,6 @@
 
 </head>
 <body>
-
 <div class="header">
   <div class="title">Arti-rate</div>
     <nav class="navbar">
@@ -25,6 +24,7 @@
 
 <div class="main-container">
   <div class="image-display">
+    <img src="../SaveHere/image.png" alt="Generated Mondrian">
     <!-- Placeholder for where images will be displayed in the future -->
   </div>
 <!--all parameters contained in this section-->
@@ -37,45 +37,51 @@
     </div>
 
     <div class="parameter-control">
-      <label for="Horizontal-line-spacing">Horizontal Line Spacing</label>
-      <input type="range" id="Horizontal-line-spacing" name="Horizontal line spacing" min="0" max="10">
-      <span class="slider-value" id="Horizontal-line-spacing-value">0</span>
+      <label for="Vertical-line-count">Vertical Line Count</label>
+      <input type="range" id="Vertical-line-count" name="Vertical-line-count" min="0" max="15">
+      <span class="slider-value" id="Vertical-line-count-value">0</span>
     </div>
 
     <div class="parameter-control">
-      <label for="vertical-line-spacing">Vertical Line Spacing</label>
-      <input type="range" id="vertical-line-spacing" name="vertical-line-spacing" min="0" max="10">
-      <span class="slider-value" id="vertical-line-spacing-value">0</span>
+      <label for="Color-Distribution">Color Distribution</label>
+      <input type="range" id="Color-Distribution" name="Color-Distribution" min="1" max="10">
+      <span class="slider-value" id="Color-Distribution-value">0</span>
     </div>
 
     <div class="parameter-control">
-      <label for="vertical-line-count">Vertical Line Count</label>
-      <input type="range" id="vertical-line-count" name="vertical-line-count" min="0" max="10">
-      <span class="slider-value" id="vertical-line-count-value">0</span>
+      <label for="Line-Thickness">Line Thickness</label>
+      <input type="range" id="Line-Thickness" name="Line-Thickness" min="1" max="5">
+      <span class="slider-value" id="Line-Thickness-value">0</span>
     </div>
 
     <div class="parameter-control">
-      <label for="Minimum spacing distance">Minimum Spacing Distance</label>
-      <input type="range" id="Minimum spacing distance" name="cMinimum spacing distance" min="0" max="10">
-      <span class="slider-value" id="Minimum spacing distance-value">0</span>
+      <label for="Minimum-line-spacing">Minimum Line Spacing</label>
+      <input type="range" id="Minimum-line-spacing" name="Minimum-line-spacing" min="15" max="20">
+      <span class="slider-value" id="Minimum-line-spacing-value">0</span>
     </div>
 
     <div class="parameter-control">
-      <label for="Maximum spacing distance">Maximum Spacing Distance</label>
-      <input type="range" id="Maximum spacing distance" name="Maximum spacing distance" min="0" max="10">
-      <span class="slider-value" id="Maximum spacing distance-value">0</span>
+      <label for="Horizontal-rectangle-split-chance">Horizontal Rectangle Split Chance (%)</label>
+      <input type="range" id="Horizontal-rectangle-split-chance" name="Horizontal-rectangle-split-chance" min="0" max="100">
+      <span class="slider-value" id="Horizontal-rectangle-split-chance-value">0</span>
     </div>
 
     <div class="parameter-control">
-      <label for="color-distribution">Color Distribution</label>
-      <input type="range" id="color-distribution" name="color-distribution" min="0" max="10">
-      <span class="slider-value" id="color-distribution-value">0</span>
+      <label for="Vertical-rectangle-split-chance">Vertical Rectangle Split Chance (%)</label>
+      <input type="range" id="Vertical-rectangle-split-chance" name="Vertical-rectangle-split-chance" min="0" max="100">
+      <span class="slider-value" id="Vertical-rectangle-split-chance-value">0</span>
     </div>
 
     <div class="parameter-control">
-      <label for="color-probability">Color Probability</label>
-      <input type="range" id="color-probability" name="color-probability" min="0" max="10">
-      <span class="slider-value" id="color-probability-value">0</span>
+      <label for="Neighboring-color-chance">Neighboring Color Chance (%)</label>
+      <input type="range" id="Neighboring-color-chance" name="Neighboring-color-chance" min="0" max="100">
+      <span class="slider-value" id="Neighboring-color-chance-value">0</span>
+    </div>
+
+    <div class="parameter-control">
+      <label for="White-rectangle-chance">White Rectangle Chance (%)</label>
+      <input type="range" id="White-rectangle-chance" name="White-rectangle-chance" min="0" max="100">
+      <span class="slider-value" id="White-rectangle-chance-value">0</span>
     </div>
 
     <!-- Add more parameter controls as needed -->

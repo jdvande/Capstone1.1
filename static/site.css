@@ -17,8 +17,9 @@ body, h1, ul, li, a, button {
   }
 
   .title {
-    font-size: 24px;
+    font-size: 35px;
     color: black;
+    font-weight: bold;
   }
 
   .navbar {
@@ -40,7 +41,7 @@ body, h1, ul, li, a, button {
   .Login {
     background-color: #ff3b30;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -63,7 +64,10 @@ body, h1, ul, li, a, button {
     flex: 3;
     background-color: #ccc;
     margin-right: 20px;
-    height: 500px; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    border:20px solid #000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
   }
 
   .parameters {
@@ -84,12 +88,19 @@ body, h1, ul, li, a, button {
   .button-container {
     margin-top: center;
     margin-bottom:20px;
+    display:flex;
   }
 
-  .button-container button {
-    width: 100%;
+  .button-container button,
+   .button-container a button{
+    font-size:17px;
+    width: 200px;
+    height: 60px;
     padding: 10px;
-    margin-bottom: 10px; /* Space between buttons */
+    margin-top:50px;
+    margin-bottom: 1px; /* Space between buttons */
+    margin-left:10px;
+    margin-right:10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -105,6 +116,8 @@ body, h1, ul, li, a, button {
     color: white;
   }
 
+
+
 /*ensures each parameter label same width*/
 .parameter-control label {
     display: block;
@@ -114,21 +127,21 @@ body, h1, ul, li, a, button {
 
 /*ensures each parameter slider has same width*/
 .parameter-control input {
-    width: 75%;
+    width: 80%;
 }
 
 /*span display the slider value*/
 .slider-value {
     display: inline-block;
-    width:30px;
+    width:40px;
     text-align: right;
+    margin-bottom:12px;
     margin-left:10px;
 }
 
 /*top spacing for back button*/
 .back-button-container {
     margin-top: auto;
-
 }
 
 .back-button {
@@ -139,6 +152,7 @@ body, h1, ul, li, a, button {
     border-radius:5px;
     display:inline-block;
 }
+
 
 /*darkens color when hovered on*/
 .back-button:hover {

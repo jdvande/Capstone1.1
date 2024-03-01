@@ -1,26 +1,72 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Art Generator</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='Logo.png') }}">
+<style>
+  /* Add your CSS styles here */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .about-header {
+    text-align: center;
+    background: #333; /* placeholder for background image */
+    color: white;
+    padding: 50px 0;
+  }
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .about-section {
+    width: 70%;
+  }
+  .contact-section {
+    width: 30%;
+    text-align: center;
+  }
+  .contact-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+  }
+</style>
 </head>
-<body> 
+<body>
+
   <div class="back-button-container">
-    <a href="{{ url_for('home') }}" class="back-button">Back to Main Page</a>
+    <a href="{{ url_for('home') }}" class="back-button" id="AboutBackButton">Back to Main Page</a>
+  </div>
+<div class="about-header">
+  <h1>ABOUT US</h1>
+</div>
+
+<div class="about-content">
+  <div class="about-section">
+    <h2>Police-trained counter-surveillance professionals (TSCM)</h2>
+    <p>You can be confident you're clear of surveillance after a Security Tactics sweep.</p>
+    <p>Security Tactics specialises in technical surveillance counter measures (TSCM). </P>
+      This includes "bug sweeping" for listening devices, but we also sweep for cameras,</p>
+    <p>GPS trackers in vehicles and surveillance programs covertly installed on mobile phones.</p>
+    <p>We are based in Queensland and operate across Australia.</p>
+  </div>
+  <img src="static/Artist 1.png" alt="Random artists 1">
+  <!--<img src="static/Artist 3..jpg" alt="Random artists 3">-->
+  <div class="contact-section">
+    <h2>Get in touch today</h2>
+    <a href="contact.html" class="contact-button">CONTACT US</a>
   </div>
 
-  <!-- Include the same header as in your main page -->
-  <div class="header">
-    <!-- Header content -->
-  </div>
+</div>
 
-  <div class="main-container">
-    <h1>About Us</h1>
-    <p>This is the about page where you can include information about the art generator project.</p>
-    <!-- Other content -->
-  </div>
 </body>
 </html>

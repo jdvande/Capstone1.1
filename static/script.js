@@ -50,7 +50,8 @@ if (registerForm) {
       console.log("New Password: " + newPassword);
 
       // Redirect to login on successful registration
-      window.location.href = 'login.html';
+      window.location.href = 'login';
+
     }
   });
 }
@@ -81,9 +82,11 @@ function updateParameterArray() {
   });
 
   displayText += '<br>' + parametersArray.join(', ');
-  document.getElementById('parameterValuesDisplay').textContent = displayText;
+  document.getElementById('parameterValuesDisplay').innerHTML = displayText;
 
   return parametersArray;
+
+
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -101,3 +104,5 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('/execute-generate', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({values: values})});
   });
 });
+
+

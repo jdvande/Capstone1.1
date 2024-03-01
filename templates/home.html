@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Art Generator</title>
+<title><strong>Art Generator</strong>></title>
 <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='Logo.png') }}">
 
@@ -24,7 +24,7 @@
 
 <div class="main-container">
   <div class="image-display">
-    <img src="../SaveHere/image.png" alt="Generated Mondrian">
+    <img src="generate-image" alt="Generated Image">
     <!-- Placeholder for where images will be displayed in the future -->
   </div>
 <!--all parameters contained in this section-->
@@ -87,18 +87,23 @@
     <!-- Add more parameter controls as needed -->
 
     <div class="button-container">
-      <button>Generate</button>
-      <button>Download</button>
+      <button id="generateButton">Generate</button>
+
+
+      <a href="/generate-image" download="image.png">
+        <button style="background-color: #28a745" class="button" id="downloadButton">Download</button>
+      </a>
     </div>
 
     <div class="button-and-display-container">
-    <button id="generateButton">Generate</button>
     <div id="parameterValuesDisplay"></div>
     </div>
 
   </div>
 </div>
 </body>
+
+
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>

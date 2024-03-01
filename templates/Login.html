@@ -20,11 +20,22 @@
     <form id="login"> <!-- The form element with an ID for identification and styling -->
       <div class="input-group"> <!-- Grouping for input field, allows for collective styling and alignment -->
         <label for="username">Username:</label> <!-- Label for the username input -->
-        <input type="text" id="username" name="username" required> <!-- Text input for username, marked as required -->
+        <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                placeholder="Enter Username">
+        <!-- Text input for username, marked as required -->
       </div>
       <div class="input-group"> <!-- Another input group for password -->
         <label for="password">Password:</label> <!-- Label for the password input -->
-        <input type="password" id="password" name="password" required> <!-- Password input, hides text entry, also required -->
+        <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="Enter password"> <!-- Password input, hides text entry, also required -->
       </div>
       <button type="submit">Login</button>
       <div class="input-group">

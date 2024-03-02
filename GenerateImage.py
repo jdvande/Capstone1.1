@@ -9,8 +9,8 @@ class GenerateImage:
     def __init__(self, param_list=None):
         # Define Parameters
 
-        self.aspect_x = 700
-        self.aspect_y = 400
+        self.aspect_x = 1700
+        self.aspect_y = 800
 
         if param_list is None:
             # horizontal line count
@@ -102,6 +102,7 @@ class GenerateImage:
             return False
 
     def generate_image(self):
+
         new_image = PIL.Image.new("RGB", (self.aspect_x, self.aspect_y), color=(255, 255, 255))
 
         with (new_image as canvas):
@@ -376,8 +377,8 @@ class GenerateImage:
             paint.line((10, 10, 10, self.aspect_y - 10), fill=(0, 0, 0), width=1)
             paint.line((self.aspect_x - 10, 10, self.aspect_x - 10, self.aspect_y - 10), fill=(0, 0, 0),
                        width=1)
-
-        new_image.save("SaveHere/image.png")
+        print("r1")
+        new_image.save("static/photos/image.png")
 
         return new_image
 

@@ -377,7 +377,7 @@ class GenerateImage:
             paint.line((self.aspect_x - 10, 10, self.aspect_x - 10, self.aspect_y - 10), fill=(0, 0, 0),
                        width=1)
 
-        new_image.save("SaveHere/image.png")
+        new_image.save("static/image.png")
 
         return new_image
 

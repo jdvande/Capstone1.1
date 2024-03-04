@@ -1,8 +1,14 @@
 # ButtonTest.py
-#requests import is a lib to make HTTP request in python
+
+# 'requests' is a Python library used to send all kinds of HTTP requests.
+# It is used to communicate with websites by sending requests to URLs
+# and retrieving their responses, which can include HTML content, JSON, or files
 import requests
 
-#bs4 lib for parsing HTML
+# 'BeautifulSoup' lib for parsing HTML
+# It creates a parse tree from page source code, allowing you to easily
+# extract and manipulate data, find elements, and navigate the document tree.
+# It's commonly used for web scraping, enabling developers to pull specific content from web pages
 from bs4 import BeautifulSoup
 
 # local server

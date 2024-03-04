@@ -1,5 +1,8 @@
 # ButtonTest.py
+#requests import is a lib to make HTTP request in python
 import requests
+
+#bs4 lib for parsing HTML
 from bs4 import BeautifulSoup
 
 # local server

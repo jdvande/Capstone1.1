@@ -3,6 +3,8 @@ import io
 from flask import Flask, render_template, request, send_file
 from GenerateImage import GenerateImage
 from PIL import Image
+from ButtonTest import run_tests
+
 
 app = Flask(__name__)
 
@@ -45,3 +47,7 @@ def generate_image():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+run_tests()
+
+

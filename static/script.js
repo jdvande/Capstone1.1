@@ -104,5 +104,3 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('/execute-generate', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({values: values})});
   });
 });
-
-

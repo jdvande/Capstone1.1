@@ -34,20 +34,14 @@ def about():
     return render_template('about.html')
 
 
-
-@app.route('/generate-image')
-def generate_image():
-    # Create an image using PIL, for example
-    image = Image.new('RGB', (1500, 800), '#EDFCFE')
-    img_io = io.BytesIO()  # Create a BytesIO buffer
-    image.save(img_io, 'PNG')  # Save the image as PNG to the buffer
-    img_io.seek(0)  # Seek to the start of the stream
-    return send_file(img_io, mimetype='image/png')  # Send the buffer's content as a PNG image
+@app.route('/execute-generate', methods=['POST'])
+def execute_generate():
+    data = request.json
+    values = data['values']
+    create = GenerateImage(values)
+    create.generate_image()
+    return "Success"
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-run_tests()
-
-

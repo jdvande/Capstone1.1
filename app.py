@@ -14,6 +14,12 @@ def home():
     return render_template('home.html')
 
 
+@app.route('/generated_image')
+def generated_image():
+    # time.sleep(5)
+    return render_template('generated_image.html')
+
+
 @app.route('/login')
 def login():
     return render_template('Login.html')

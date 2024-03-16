@@ -2,6 +2,7 @@ import io
 
 from flask import Flask, render_template, request, send_file
 from GenerateImage import GenerateImage
+from RateImage import rate_image
 from PIL import Image
 from ButtonTest import run_tests
 
@@ -45,7 +46,14 @@ def execute_generate():
     data = request.json
     values = data['values']
     create = GenerateImage(values)
-    create.generate_image()
+
+    img = create.generate_image()
+    img.save("static/photos/image.png")
+
+    percent_mondrian = rate_image(values)
+
+    print(str(percent_mondrian))
+
     return "Success"
 
 

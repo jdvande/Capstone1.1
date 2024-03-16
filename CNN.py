@@ -22,6 +22,10 @@ class CNN(nn.Module):
         x = self.fc2(x)
         return x
 
+# If there isn't a trained neural network present, the system will create a new one using all the images contained
+# within the testing_data and training_data files. Images are cut down to 224 by 224 pixels which is the standard
+# for image recognition systems.
+
 
 if os.path.isfile('weights/weights.pth'):
     model = CNN()
@@ -29,7 +33,7 @@ if os.path.isfile('weights/weights.pth'):
     model.eval()
 else:
     model = CNN()
-
+    # Images are cut down here
     transform = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor(),
                                     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
     train_set = torchvision.datasets.ImageFolder(root='training_data', transform=transform)
@@ -43,6 +47,8 @@ else:
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
+    # The for loop below is what trains the neural network. It works through all the images creating patterns and
+    # links between the various images in each class
 
     num_epochs = 10
     for epoch in range(num_epochs):
@@ -52,6 +58,9 @@ else:
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
+
+    # The code beneath runs through the testing data to make sure the trained neural network has a good accuracy. The
+    # higher the percentage, the better the system will be able to differentiate images.
 
     model.eval()
     correct = 0

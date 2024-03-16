@@ -488,7 +488,5 @@ class GenerateImage:
         self.thickify_lines()
         self.repaint()
 
-        self.new_image.save("static/photos/image.png")
-
         return self.new_image
 

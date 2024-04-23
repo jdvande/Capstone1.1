@@ -1,6 +1,6 @@
 import io
 
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, jsonify, send_file
 from GenerateImage import GenerateImage
 from RateImage import rate_image
 from PIL import Image
@@ -54,7 +54,7 @@ def execute_generate():
 
     print(str(percent_mondrian))
 
-    return "Success"
+    return jsonify({'percent_mondrian': percent_mondrian})
 
 
 if __name__ == '__main__':

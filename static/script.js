@@ -116,5 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Display the percentage on the page
     const percentageDisplay = document.getElementById('percentageDisplay');
-    percentageDisplay.innerText = 'Percentage Mondrian: ' + percentage + '%';
+    if (percentage !== null) {
+        percentageDisplay.innerText = 'Percentage Mondrian: ' + percentage + '%';
+    } else {
+        percentageDisplay.innerText = '';  // Set the text to be empty if percentage is null
+    }
 });

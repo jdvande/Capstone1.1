@@ -85,7 +85,7 @@
 
     <!-- Add more parameter controls as needed -->
 
-    <div class="button-container">
+    <div class="button-container" style="display: flex;">
         <button id="generateButton">Generate</button>
 
 
@@ -97,7 +97,8 @@
 
     <div class="button-container">
       <a href="/">
-        <button style="background-color: #1d8214" class="button" id="backButton">New Canvas</button>
+        <button
+                style="background-color: #1d8214; width: 500px;margin-top: 5" class="button" id="backButton">New Canvas</button>
       </a>
     </div>
 
@@ -108,10 +109,10 @@
 
   </div>
 </div>
+
+<img src="static/photos/Steve Industries.jpg" alt="Steve" class="bottom-left-image">
+
 </body>
-
-
-
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 

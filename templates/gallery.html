@@ -6,25 +6,56 @@
   <title>Gallery - Art Generator</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='Logo.png') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .gallery-title {
+      font-size: 48px;
+      margin-top: 20px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px; /* Reduce the gap for closer squares */
+      padding: 20px;
+      max-width: 1200px; /* Adjust this value to manage the size */
+      margin: auto; /* This will center your grid in the middle of the page */
+    }
+    .grid-item {
+      border: 2px solid black;
+      padding-bottom: 100%; /* This creates a square based on the width */
+      margin-bottom: -4px; /* Adjust the negative margin to reduce the space caused by padding-bottom */
+    }
+    .back-button-container {
+      margin-top: 20px;
+      text-align: left;
+    }
+  </style>
 </head>
-<body> 
+<body>
 
   <div class="back-button-container">
-    <a href="{{ url_for('home') }}" class="back-button">Back to Main Page</a>
-  </div>
-  <!-- Include the same header as in your main page -->
-  <div class="header">
-    <!-- Header content -->
+    <a href="{{ url_for('home') }}" class="back-button" id="GalleryBackButton">Back to Main Page</a>
   </div>
 
-<!--SURPRISE -->
-<img src="static/BOO.jpg" alt="Big Bertha" width="70%">
+  <h1 class="gallery-title">GALLERY</h1>
 
-
-  <div class="main-container">
-    <h1>Gallery</h1>
-    <p>Here you'll find a collection of generated art.</p>
-    <!-- Other content -->
+  <div class="grid-container">
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
   </div>
+
+<button class="save-button" id="saveButton">Save</button>
+
+  <input type="file" id="imageInput" multiple style="display:none;" onchange="loadImages(event)" accept="image/*">
+
 </body>
 </html>

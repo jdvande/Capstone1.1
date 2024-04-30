@@ -52,8 +52,6 @@ def execute_generate():
 
     percent_mondrian = rate_image(values)
 
-    print(str(percent_mondrian))
-
     return jsonify({'percent_mondrian': percent_mondrian})
 
 

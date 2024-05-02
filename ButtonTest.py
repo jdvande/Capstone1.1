@@ -32,6 +32,13 @@ def test_download_button():
     assert download_button is not None, "Download button not found."
 
 
+def test_newcanvas_button():
+    respond = requests.get(URL)
+    soup = BeautifulSoup(respond.content, 'html.parser')
+    newCanvas_Button = soup.find(id='newCanvasButton')
+    assert newCanvas_Button is not None, "New Canvas Button not found."
+
+
 def test_login_button():
     response = requests.get(URL)
     soup = BeautifulSoup(response.content, 'html.parser')
@@ -44,6 +51,12 @@ def test_about_button():
     soup = BeautifulSoup(response.content, 'html.parser')
     about_button = soup.find('a', class_='nav-link', text='About')
     assert about_button is not None, "About button not found."
+
+def test_gallery_button():
+    response = requests.get(URL)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    gallery_button = soup.find('a', class_='nav-link', text='Gallery')
+    assert gallery_button is not None, "Gallery button not found."
 
 
 def test_slider_initial_state():
@@ -69,7 +82,6 @@ def test_slider_initial_state():
     print("")
     print("Horizontal line count slider test passed.")
 
-
     slider = soup.find(id='Minimum-line-spacing')
     display = soup.find(id='Minimum-line-spacing-value')
     assert slider is not None, "Slider not found!"
@@ -77,7 +89,6 @@ def test_slider_initial_state():
     initial_value = "0"
     assert display.text == initial_value, "slider initial value doesn't match the display"
     print("Minimum line spacing slider test passed.")
-
 
     slider = soup.find(id='White-rectangle-chance')
     display = soup.find(id='White-rectangle-chance-value')
@@ -91,11 +102,10 @@ def test_slider_initial_state():
 def run_tests():
     test_generate_button()
     test_download_button()
+    test_newcanvas_button()
     test_login_button()
     test_about_button()
+    test_gallery_button()
     test_slider_initial_state()
 
     print("All tests passed!")
-
-
-

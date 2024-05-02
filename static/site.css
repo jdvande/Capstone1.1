@@ -6,6 +6,7 @@ body, h1, ul, li, a, button {
     font-family: Arial, sans-serif;
   }
 
+
   /* Header Styles */
   .header {
     display: flex;
@@ -79,7 +80,7 @@ body, h1, ul, li, a, button {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #edededed;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -94,6 +95,9 @@ body, h1, ul, li, a, button {
     margin-top: center;
     margin-bottom:20px;
     display:flex;
+  }
+  #newCanvasButton:hover{
+    background-color:#ffffff;
   }
 
   .button-container button,
@@ -120,6 +124,7 @@ body, h1, ul, li, a, button {
   .button-container button:nth-child(1) {
     background-color: #007bff;
     color: white;
+
   }
 
   .button-container button:nth-child(2) {
@@ -172,6 +177,19 @@ body, h1, ul, li, a, button {
   background-color: #0056b3;
 }
 
+#generateButton:hover{
+    background-color: #1c8aff;
+}
+
+#downloadButton:hover{
+    background-color: #1c1aff;
+}
+
+#newCanvasButton:hover{
+    background-color:#ffffff;
+}
+
+
 #parameterValuesDisplay {
 /* Adjusts space below the Generate button */
   margin-top: 10px;
@@ -198,4 +216,18 @@ body, h1, ul, li, a, button {
     bottom: 0;       /* Flush to the bottom */
     width: 300px;    /* Set the width of the image */
     height: auto;    /* Maintain aspect ratio */
+}
+
+/*Mondrian About page image */
+#aboutPageImage{
+    width:1000px;
+    height:auto;
+}
+
+.about-section {
+  background-color: #e4e4e4eb; /* Sets the background color to white */
+  padding: 20px;
+  border: 20px;
+  margin: 20px 200px;
+
 }

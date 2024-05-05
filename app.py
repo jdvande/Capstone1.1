@@ -5,6 +5,7 @@ from GenerateImage import GenerateImage
 from RateImage import rate_image
 from PIL import Image
 from ButtonTest import run_tests
+import db_SQLA, NameEncoding
 
 
 app = Flask(__name__)
@@ -52,8 +53,30 @@ def execute_generate():
 
     percent_mondrian = rate_image(values)
 
+    nameTBExtended = NameEncoding.NameEncoding()
+    userPhotoRenamed = nameTBExtended.nameExtension("static/photos_users/")  # name encode new file
+    img.save(userPhotoRenamed)  # separate file for database path
+
+    # SQLAlchemy image data to parameters database
+    rating = (percent_mondrian // 10) * 10
+    paramSession = db_SQLA.parameterSession()  # start database session
+
+    parameters = db_SQLA.Parameter(userPhotoRenamed, create.h_line_get(), create.v_line_get(), create.cd_get(),
+                                   create.lt_get(), create.ls_get(), create.hrsc_get(), create.vrsc_get(),
+                                   create.ncc_get(), create.wrc_get(), rating)  # get parameters from image
+    paramSession.add(parameters)  # submit image as one entry
+    paramSession.commit()  # end database connection
+    # End image data to database section
+
+    # SQLAlchemy image data to averages database
+    db_SQLA.AverageRating.update_averages(rating, int(create.h_line_get()), int(create.v_line_get()),
+                                          int(create.cd_get()), int(create.lt_get()), int(create.ls_get()),
+                                          int(create.hrsc_get()), int(create.vrsc_get()),
+                                          int(create.ncc_get()), int(create.wrc_get()))
+    # End SQLAlchemy image data to averages database
+
     return jsonify({'percent_mondrian': percent_mondrian})
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')

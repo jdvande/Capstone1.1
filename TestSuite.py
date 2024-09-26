@@ -10,18 +10,21 @@ import os
 
 
 class TestSuite:
+
+    # To test if images can even be created with random parameters
     def test_generate(self):
-        generate_test = GenerateImage()
         total_tests = 0
         while total_tests < 100:
+            generate_test = GenerateImage()
             generate_test.set_random()
             generate_test.generate_image()
             total_tests += 1
 
+    # To test vertical line count parameter against actual vertical lines painted
     def test_v_line_count(self):
-        v_line_test = GenerateImage()
         total_tests = 0
         while total_tests < 100:
+            v_line_test = GenerateImage()
             v_line_test.set_random()
             v_line_count = int(float(v_line_test.v_line_get()))
 
@@ -38,10 +41,11 @@ class TestSuite:
             assert total_v_lines == v_line_count
             total_tests += 1
 
+    # To test horizontal line count parameter against actual horizontal lines painted
     def test_h_line_count(self):
-        h_line_test = GenerateImage()
         total_tests = 0
         while total_tests < 100:
+            h_line_test = GenerateImage()
             h_line_test.set_random()
             h_line_count = int(float(h_line_test.h_line_get()))
 
@@ -58,11 +62,12 @@ class TestSuite:
             assert total_h_lines == h_line_count
             total_tests += 1
 
+    # To test line spacing parameter against actual spacing between lines
     def test_line_spacing(self):
-        ls_test = GenerateImage()
         total_tests = 0
         # Randomize Values
         while total_tests < 100:
+            ls_test = GenerateImage()
             ls_test.set_random()
             line_spacing = int(float(ls_test.ls_get()))
 
@@ -92,11 +97,12 @@ class TestSuite:
                 separation_count += 1
             total_tests += 1
 
+    # To test line thickness parameter against actual painted line thickness
     def test_line_thickness(self):
-        lt_test = GenerateImage()
         total_tests = 0
         # Randomize Values
         while total_tests < 100:
+            lt_test = GenerateImage()
             lt_test.set_random()
             line_thickness = int(float(lt_test.lt_get()))
 
@@ -140,6 +146,7 @@ class TestSuite:
 
             total_tests += 1
 
+    # To test if the image is saved in the correct folder
     def test_image_saved(self):
         is_test = GenerateImage()
         is_test.set_random()
@@ -147,7 +154,7 @@ class TestSuite:
 
         did_save = False
 
-        if os.path.isfile("SaveHere/image.png"):
+        if os.path.isfile("static/photos/image.png"):
             did_save = True
 
         assert did_save

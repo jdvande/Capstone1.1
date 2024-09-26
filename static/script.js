@@ -75,13 +75,13 @@ function updateValue(slider) {
 function updateParameterArray() {
   var sliders = document.querySelectorAll('input[type="range"]');
   var parametersArray = [];
-  var displayText = 'Slider Values: ';
+  var displayText = 'Please allow up to 30 seconds for image processing. ';
 
   sliders.forEach(function(slider) {
     parametersArray.push(slider.value);
   });
 
-  displayText += '<br>' + parametersArray.join(', ');
+  //displayText += '<br>' + parametersArray.join(', ');
   document.getElementById('parameterValuesDisplay').innerHTML = displayText;
 
   return parametersArray;
@@ -101,8 +101,24 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('generateButton').addEventListener('click', function() {
     values = updateParameterArray();
 
-    fetch('/execute-generate', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({values: values})});
+    fetch('/execute-generate', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({values: values})})
+        .then(response => response.json())
+        .then(data => {
+            window.location.href = '/generated_image?percentage=' + data.percent_mondrian;
+        });
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Parse the URL to get the percentage query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const percentage = urlParams.get('percentage');
 
+    // Display the percentage on the page
+    const percentageDisplay = document.getElementById('percentageDisplay');
+    if (percentage !== null) {
+        percentageDisplay.innerText = 'Percentage Mondrian: ' + percentage + '%';
+    } else {
+        percentageDisplay.innerText = '';  // Set the text to be empty if percentage is null
+    }
+});

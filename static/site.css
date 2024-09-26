@@ -6,13 +6,14 @@ body, h1, ul, li, a, button {
     font-family: Arial, sans-serif;
   }
 
+
   /* Header Styles */
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: #1143edd6;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
 
@@ -30,7 +31,7 @@ body, h1, ul, li, a, button {
   .nav-link {
     padding: 10px 15px;
     text-decoration: none;
-    color: black;
+    color: white;
     transition: color 0.3s ease;
   }
 
@@ -64,10 +65,14 @@ body, h1, ul, li, a, button {
     flex: 3;
     background-color: #ccc;
     margin-right: 20px;
-    height: 800px; /* Adjust as needed */
+    height: fit-content;
     border:20px solid #000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
+  }
+
+  .image-display img {
+     width: -webkit-fill-available;
   }
 
   .parameters {
@@ -75,7 +80,7 @@ body, h1, ul, li, a, button {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #edededed;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -83,6 +88,7 @@ body, h1, ul, li, a, button {
   .parameter-controls label,
   .parameter-controls input {
     margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .button-container {
@@ -90,25 +96,35 @@ body, h1, ul, li, a, button {
     margin-bottom:20px;
     display:flex;
   }
+  #newCanvasButton:hover{
+    background-color:#ffffff;
+  }
 
   .button-container button,
    .button-container a button{
-    font-size:17px;
-    width: 200px;
+    font-size:20px;
+    width: 225px;
     height: 60px;
     padding: 10px;
-    margin-top:50px;
-    margin-bottom: 1px; /* Space between buttons */
+    margin-top:40px;
+    margin-bottom: -50px; /* Space between buttons */
     margin-left:10px;
     margin-right:10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
   }
+
+.button-container {
+    width: 100%; /* Adjust if needed to match the combined width of other buttons */
+    display: flex;
+    justify-content: space-between; /* This will space out your buttons */
+}
 
   .button-container button:nth-child(1) {
     background-color: #007bff;
     color: white;
+
   }
 
   .button-container button:nth-child(2) {
@@ -123,6 +139,7 @@ body, h1, ul, li, a, button {
     display: block;
     margin-bottom: 5px;
     width: 100%;
+    font-size:20px;
 }
 
 /*ensures each parameter slider has same width*/
@@ -137,6 +154,7 @@ body, h1, ul, li, a, button {
     text-align: right;
     margin-bottom:12px;
     margin-left:10px;
+    font-size:20px;
 }
 
 /*top spacing for back button*/
@@ -159,9 +177,22 @@ body, h1, ul, li, a, button {
   background-color: #0056b3;
 }
 
+#generateButton:hover{
+    background-color: #1c8aff;
+}
+
+#downloadButton:hover{
+    background-color: #1c1aff;
+}
+
+#newCanvasButton:hover{
+    background-color:#ffffff;
+}
+
+
 #parameterValuesDisplay {
 /* Adjusts space below the Generate button */
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .button-and-display-container {
@@ -170,5 +201,33 @@ body, h1, ul, li, a, button {
 }
 
 #parameterValuesDisplay {
-    margin-top: 10px; /* Adjusts space below the Generate button */
+    margin-top: 5px; /* Adjusts space below the Generate button */
+}
+
+#percentageDisplay {
+    font-size: 24px;
+    font-bold:/* Adjust the font size to your preference */
+}
+
+/*Steve Incorporated picture at bottom*/
+.bottom-left-image {
+    position: fixed; /* Fixed position */
+    left: 0;         /* Flush to the left side */
+    bottom: 0;       /* Flush to the bottom */
+    width: 300px;    /* Set the width of the image */
+    height: auto;    /* Maintain aspect ratio */
+}
+
+/*Mondrian About page image */
+#aboutPageImage{
+    width:1000px;
+    height:auto;
+}
+
+.about-section {
+  background-color: #e4e4e4eb; /* Sets the background color to white */
+  padding: 20px;
+  border: 20px;
+  margin: 20px 200px;
+
 }

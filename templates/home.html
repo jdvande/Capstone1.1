@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +23,8 @@
 
 <div class="main-container">
   <div class="image-display">
-    <img src="generate-image" alt="Generated Image">
     <!-- Placeholder for where images will be displayed in the future -->
+    {% block head %}{% endblock %}
   </div>
 <!--all parameters contained in this section-->
   <div class="parameters">
@@ -86,25 +85,42 @@
 
     <!-- Add more parameter controls as needed -->
 
+    <div class="button-container"
+         style="display: flex;">
+        <button
+                id="generateButton">Generate</button>
+
+
+      <a href="/static/photos/image.png" download="image.png">
+        <button
+                style="background-color: #28a745"
+                class="button"
+                id="downloadButton">Download</button>
+      </a>
+    </div>
+
+
     <div class="button-container">
-      <button id="generateButton">Generate</button>
-
-
-      <a href="/generate-image" download="image.png">
-        <button style="background-color: #28a745" class="button" id="downloadButton">Download</button>
+      <a href="/">
+        <button
+                style="background-color: #1d8214; width: 500px;margin-top: 5; "
+                class="button "
+                id="newCanvasButton">New Canvas
+        </button>
       </a>
     </div>
 
     <div class="button-and-display-container">
-    <div id="parameterValuesDisplay"></div>
+      <div id="percentageDisplay"></div>
+      <div id="parameterValuesDisplay"></div>
     </div>
 
   </div>
 </div>
+
+<img src="static/photos/Steve Industries.jpg" alt="Steve" class="bottom-left-image">
+
 </body>
-
-
-
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
